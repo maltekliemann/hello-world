@@ -3,17 +3,17 @@ on:
   - push
 
 jobs:
-  hello-linux:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'
-      - name: Install
-        run: pip install .
-      - name: Execute
-        run: hello-world
+  # hello-linux:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-python@v2
+  #       with:
+  #         python-version: '3.9'
+  #     - name: Install
+  #       run: pip install .
+  #     - name: Execute
+  #       run: hello-world
   hello-win:
     runs-on: windows-latest
     steps:
@@ -22,6 +22,8 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install
-        run: pip install .
+        run: |
+          pip install requirements.txt
+          pip install .
       - name: Execute
         run: hello-world
